@@ -1,0 +1,25 @@
+.Sidebar {
+    ul {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        background-color: rgb(225, 200, 248);
+        padding: 1rem;
+
+
+        li {
+
+            list-style-type: none;
+            text-decoration: none;
+        }
+
+        li:active {
+            color: black;
+        }
+
+        li:hover {
+            border: none;
+        }
+
+    }
+}

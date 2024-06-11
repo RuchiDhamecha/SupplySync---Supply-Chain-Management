@@ -1,0 +1,20 @@
+ .Body{
+    display: flex;
+    flex-direction: row;
+    gap: 4rem;
+    margin: 5rem;
+    .Text{
+        flex: 2;
+        box-shadow: 1px 1px 8px 4px rgb(219, 183, 252);
+        padding: 2rem;
+        border-radius: 16px;
+        h1{
+            color: blueviolet;
+            padding-bottom: 1rem;
+        }
+    }
+    div:nth-child(2){
+        flex: 1;
+
+    }
+ }
