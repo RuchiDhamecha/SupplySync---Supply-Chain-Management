@@ -10,9 +10,6 @@ const Manufacturer = ({}: ManufacturerProps) => {
       <NavBar />
       <div className={styles.Flex}>
         <div>
-          <SideBar />
-        </div>
-        <div>
           <Products />
         </div>
       </div>

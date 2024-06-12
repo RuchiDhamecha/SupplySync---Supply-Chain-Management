@@ -3,17 +3,8 @@ import { productsDataTypes } from "../../screens/manufacturerScreen/Products/Pro
 import styles from "./ModalDisAddProduct.module.scss";
 import { ModalDisAddProductProps } from "./ModalDisAddProduct.types.ts";
 
-const ModalDisAddProduct = ({
-  isOpen,
-  onClose,
-  onAddProduct,
-}: ModalDisAddProductProps) => {
-  const {
-    register,
-    handleSubmit,
-    reset,
-    formState: { errors },
-  } = useForm<productsDataTypes>();
+const ModalDisAddProduct = ({ isOpen, onClose, onAddProduct}: ModalDisAddProductProps) => {
+  const { register, handleSubmit, reset, formState: { errors }} = useForm<productsDataTypes>();
 
   const onSubmit = (data: productsDataTypes) => {
     onAddProduct(data);

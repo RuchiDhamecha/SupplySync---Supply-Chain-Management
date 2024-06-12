@@ -1,17 +1,23 @@
+@import '../../../partials'; 
+ 
  .ProductsScreen {
-    padding: 1rem 3rem;
+    padding: 0rem 3rem;
     display: flex;
     justify-content: flex-start;
     flex-wrap: wrap;
  }
 
  .AddBtn {
-    margin: 0.25rem;
+    margin: 0.25rem 5rem;
     display: flex;
-    flex-direction: row-reverse;
+    justify-content: space-between;
+    h2{
+      color: $blueviolet;
+    }
     
     button {
        padding: 0.25rem 0.5rem;
+       margin: 0.5rem 2rem;
        color: white;
        background-color: blueviolet;
        border: none;

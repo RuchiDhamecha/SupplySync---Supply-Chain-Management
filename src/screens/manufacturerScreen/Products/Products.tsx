@@ -3,7 +3,7 @@ import styles from "./Products.module.scss";
 import { ProductsProps } from "./Products.types";
 import { productsDataTypes } from "./Products.types";
 import ProductsCard from "../../../components/ProductsCard/ProductsCard";
-import { createProduct, deleteProduct, updateProduct} from "../../../auth/manuProducts";
+import { createProduct, deleteProduct,updateProduct } from "../../../auth/manuProducts";
 import { productsScreen } from "../../../auth/distProducts.instance";
 import ModalDisAddProduct from "../../../components/ModalDisAddProduct/ModalDisAddProduct";
 
@@ -11,10 +11,12 @@ const Products = ({}: ProductsProps) => {
   const [products, setProducts] = useState<productsDataTypes[]>([]);
   const [isModalOpen, setIsModalOpen] = useState(false);
 
+
   const getdata = async () => {
     try {
       const productsScreenResponse = await productsScreen();
       setProducts(productsScreenResponse.data);
+      console.log(productsScreenResponse.data)
     } catch (error: any) {
       console.log("error", error.message);
     }
@@ -58,8 +60,8 @@ const Products = ({}: ProductsProps) => {
   return (
     <div>
       <div className={styles.AddBtn}>
-
-      <button onClick={() => setIsModalOpen(true)} >+ ADD PRODUCT</button>
+        <h2>My Products</h2>
+        <button onClick={() => setIsModalOpen(true)}>+ ADD PRODUCT</button>
       </div>
       <div className={styles.ProductsScreen}>
         {products.map((productItem) => (
@@ -71,7 +73,7 @@ const Products = ({}: ProductsProps) => {
           />
         ))}
       </div>
-       <ModalDisAddProduct
+      <ModalDisAddProduct
         isOpen={isModalOpen}
         onClose={() => setIsModalOpen(false)}
         onAddProduct={handleAddProduct}
@@ -81,4 +83,3 @@ const Products = ({}: ProductsProps) => {
 };
 
 export default Products;
-

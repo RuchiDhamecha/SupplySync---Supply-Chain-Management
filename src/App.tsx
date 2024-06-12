@@ -1,13 +1,9 @@
-import { useState } from "react";
-import reactLogo from "./assets/react.svg";
-import viteLogo from "/vite.svg";
 import "./App.module.scss";
 import HomePage from "./pages/HomePage/HomePage";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Manufacturer from "./pages/Manufacturer/Manufacturer";
 import { Link } from "react-router-dom";
 import Distributor from "./pages/Distributor/Distributor";
-import Products from "./screens/manufacturerScreen/Products/Products";
 import Distributors from "./screens/manufacturerScreen/Distributors/Distributors";
 import Orders from "./screens/manufacturerScreen/Orders/Orders";
 import Rewards from "./screens/manufacturerScreen/Rewards/Rewards";
@@ -18,7 +14,6 @@ import NotFound from "./components/NotFound/NotFound";
 function App() {
   return (
     <>
-    {/* <Products/> */}
     <Router>
     <div className="app">
       <Routes>
@@ -34,8 +29,6 @@ function App() {
         <Route path="/distributor" element={<Distributor />} />
         <Route path="/distributor" element={<Distributor />} />
         <Route path="*" element={<NotFound />} />
-
-
       </Routes>
     </div>
   </Router>

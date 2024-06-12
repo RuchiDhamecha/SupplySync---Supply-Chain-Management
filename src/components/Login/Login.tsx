@@ -14,21 +14,17 @@ const Login = ({}: LoginProps) => {
    try {
     console.log(data);
     
-     const response = await login(data);
+     const {user, token} = await login(data);
+
+     const role = user.roleId[0];
     //  console.log(`heeeeeey`)
-        console.log(`data : ${response.user}`);
-        if (response.user.roleId[0] === 1 ) {
+        console.log(`data : ${user}`);
+        if (role === 1 ) {
           navigate('/manufacturer');
-          {
-            <Link to="/manufacturer"></Link>
-          }
-        } else if (response.roleId[0] === 2 ) {
+        } else if (role === 2 ) {
           navigate('/distributor');
-          {
-            <Link to="/distributor"></Link>
-          }
         }
-        localStorage.setItem("token", response.data.user.accessToken);
+        localStorage.setItem("token", token);
         alert("login successful!");
        
       } catch (error) {
@@ -45,7 +41,7 @@ const Login = ({}: LoginProps) => {
             <label>Email :</label>
             <div>
             <input {...register('email', { required: true })} />
-            {errors.email && <span>This field is required</span>}
+            {errors.email && <span className={styles.error}>This field is required</span>}
             </div>
           
           </div>
@@ -53,7 +49,7 @@ const Login = ({}: LoginProps) => {
             <label>Password :</label>
             <div>
             <input type="password" {...register('password', { required: true })} />
-            {errors.password && <span>This field is required</span>}
+            {errors.password && <span className={styles.error}>This field is required</span>}
             </div>
             
           </div>

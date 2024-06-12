@@ -1,3 +1,5 @@
+ @import '../../partials';
+ 
  .Login{
     box-shadow:1px 1px 8px 4px rgb(214, 171, 254);
     padding: 2rem;
@@ -9,6 +11,7 @@
         border-radius: 8px;
         background-color:rgb(238, 220, 255) ;
         margin: 1rem 0;
+        box-sizing: border-box;
     }
     label{
         margin-top: 1rem;
@@ -18,7 +21,7 @@
         background-color: blueviolet;
         color: white;
         padding: 0.75rem 1.5rem;
-        border: none;
+        border: $blueviolet;
         border-radius: 4rem;
     }
     button:active{
@@ -28,5 +31,11 @@
     }
     h2{
         margin-bottom: 1rem;
+    }
+    .error{
+        color: red;
+        margin-bottom: 1rem ;
+        display: block;
+
     }
  }

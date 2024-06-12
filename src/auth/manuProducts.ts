@@ -1,6 +1,21 @@
 import { productsDataTypes } from "../screens/manufacturerScreen/Products/Products.types";
 import axiosInstance from "./api";
 
+// import axios from "axios";
+
+// export const productsScreen = async()=>{
+//     const productsScreenResponse = await axios.get(
+//         `products/`
+//     ,{
+//         headers:{
+//             "ngrok-skip-browser-warning": "skip-browser-warning",
+//         }
+//     });
+//     console.log(productsScreenResponse.data)
+//     return productsScreenResponse.data;
+    
+// }
+
 export const updateProduct = async (product: productsDataTypes)=> {
   try {
     const { _id, ...updateData } = product;

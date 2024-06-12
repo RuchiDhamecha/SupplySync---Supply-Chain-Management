@@ -1,1 +1,20 @@
+@import '../../../partials';
  
+.RewardsScreen {
+    padding: 0rem 3rem;
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+ }
+ .HeadBtns{
+     display: flex;
+     justify-content: space-between;
+     margin: 0.25rem 5rem;
+    button{
+        @extend %Button;
+    }
+    h2{
+        color: $blueviolet;
+    }
+
+ }
