@@ -1,0 +1,11 @@
+ @import '../../../styles//partials.module';
+.Customer{
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem 0;
+    border-bottom: 1px solid #ccc;
+
+    .EditSaveBtn{
+        @extend %GreenButton;
+    }
+}

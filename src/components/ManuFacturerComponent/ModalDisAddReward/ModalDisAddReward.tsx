@@ -1,7 +1,8 @@
 import { useForm } from "react-hook-form";
-import styles from "./ModalDisAddReward.module.scss"; 
+// import styles from "./ModalDisAddReward.module.scss"; 
+import styles from '../../../styles/modal.module.scss'
 import { ModalDisAddRewardProps } from "./ModalDisAddReward.types.ts" 
-import { RewardsDataType } from "../../screens/manufacturerScreen/Rewards/Rewards.types.ts";
+import { RewardsDataType } from "../../../screens/manufacturerScreen/Rewards/Rewards.types.ts";
  
 const ModalDisAddReward = ({isOpen, onClose, onAddReward}: ModalDisAddRewardProps) => { 
     const { register, handleSubmit, reset, formState: { errors }} = useForm<RewardsDataType>();

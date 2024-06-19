@@ -1,6 +1,7 @@
 import { useForm } from "react-hook-form";
-import { productsDataTypes } from "../../screens/manufacturerScreen/Products/Products.types.ts";
-import styles from "./ModalDisAddProduct.module.scss";
+import { productsDataTypes } from "../../../screens/manufacturerScreen/Products/Products.types.ts";
+// import styles from "./ModalDisAddProduct.module.scss";
+import styles from '../../../styles/modal.module.scss';
 import { ModalDisAddProductProps } from "./ModalDisAddProduct.types.ts";
 
 const ModalDisAddProduct = ({ isOpen, onClose, onAddProduct}: ModalDisAddProductProps) => {

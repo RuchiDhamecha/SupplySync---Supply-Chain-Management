@@ -1,9 +1,12 @@
+import NavBar from "../NavBar/NavBar.tsx";
 import styles from "./SideBar.module.scss"; 
 import { SideBarProps } from "./SideBar.types.ts" 
 import { Link } from 'react-router-dom';
  
 const SideBar = ({}: SideBarProps) => { 
     return(
+      <div>
+        <NavBar/>
         <div className={styles.Sidebar}>
         <ul>
           <li><Link to="/manufacturer/products">Products</Link></li>
@@ -13,6 +16,7 @@ const SideBar = ({}: SideBarProps) => {
           <li><Link to="/manufacturer/reports">Report</Link></li>
           <li><Link to="/manufacturer/customers">Customer</Link></li>
         </ul>
+      </div>
       </div>
     )
 } 

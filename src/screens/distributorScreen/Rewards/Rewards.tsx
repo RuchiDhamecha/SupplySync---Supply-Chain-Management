@@ -1,10 +1,14 @@
+import SideBarDistributor from "../../../layout/SideBarDistributor/SideBarDistributor.tsx";
 import styles from "./Rewards.module.scss"; 
 import { RewardsProps } from "./Rewards.types.ts" 
  
-const Rewards = ({}: RewardsProps) => {
+const RewardsD = ({}: RewardsProps) => {
     return(
-        <div>cust</div>
-    )  
+<div>
+            <div>
+                <SideBarDistributor/>
+            </div>
+        </div>    )  
 } 
  
-export default Rewards 
+export default RewardsD 

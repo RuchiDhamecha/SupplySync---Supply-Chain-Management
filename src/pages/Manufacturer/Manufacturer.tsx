@@ -1,4 +1,4 @@
-import SideBar from "../../components/SideBar/SideBar.tsx";
+import SideBar from "../../layout/SideBar/SideBar.tsx";
 import NavBar from "../../layout/NavBar/NavBar.tsx";
 import Products from "../../screens/manufacturerScreen/Products/Products.tsx";
 import styles from "./Manufacturer.module.scss";
@@ -7,7 +7,7 @@ import { ManufacturerProps } from "./Manufacturer.types.ts";
 const Manufacturer = ({}: ManufacturerProps) => {
   return (
     <div>
-      <NavBar />
+      <SideBar />
       <div className={styles.Flex}>
         <div>
           <Products />

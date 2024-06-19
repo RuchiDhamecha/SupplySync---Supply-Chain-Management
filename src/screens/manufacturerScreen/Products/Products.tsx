@@ -2,10 +2,11 @@ import { useEffect, useState } from "react";
 import styles from "./Products.module.scss";
 import { ProductsProps } from "./Products.types";
 import { productsDataTypes } from "./Products.types";
-import ProductsCard from "../../../components/ProductsCard/ProductsCard";
+import ProductsCard from "../../../components/ManuFacturerComponent/ProductsCard/ProductsCard";
 import { createProduct, deleteProduct,updateProduct } from "../../../auth/manuProducts";
-import { productsScreen } from "../../../auth/distProducts.instance";
-import ModalDisAddProduct from "../../../components/ModalDisAddProduct/ModalDisAddProduct";
+import { productsScreen } from "../../../auth/manuProducts";
+import ModalDisAddProduct from "../../../components/ManuFacturerComponent/ModalDisAddProduct/ModalDisAddProduct";
+import Pagination from "../../../components/Pagination/Pagination";
 
 const Products = ({}: ProductsProps) => {
   const [products, setProducts] = useState<productsDataTypes[]>([]);
@@ -78,6 +79,7 @@ const Products = ({}: ProductsProps) => {
         onClose={() => setIsModalOpen(false)}
         onAddProduct={handleAddProduct}
       />
+      {/* <Pagination/> */}
     </div>
   );
 };

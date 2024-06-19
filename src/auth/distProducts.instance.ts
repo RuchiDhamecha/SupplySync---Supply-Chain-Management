@@ -12,27 +12,27 @@ import authAxiosInstance from "./api.intercept";
 //   }
 // };
 
-export const productsScreen = async () => {
+// export const productsScreen = async () => {
 
-    try {
-        const token = localStorage.getItem('token');
-        console.log(token);
+//     try {
+//         const token = localStorage.getItem('token');
+//         console.log(token);
       
-        const productsScreenResponse = await axios.get(
-            import.meta.env.VITE_API_URL+'products/'
-            , {
-                headers: {
-                    Authorization: `Bearer ${token}`,
-                    "ngrok-skip-browser-warning":"skip-browser-warning",
+//         const productsScreenResponse = await axios.get(
+//             import.meta.env.VITE_API_URL+'products/'
+//             , {
+//                 headers: {
+//                     Authorization: `Bearer ${token}`,
+//                     "ngrok-skip-browser-warning":"skip-browser-warning",
 
-                }
-            });
-            console.log(productsScreenResponse.data);
+//                 }
+//             });
+//             console.log(productsScreenResponse.data);
             
-        return productsScreenResponse.data;
-    }
+//         return productsScreenResponse.data;
+//     }
 
-    catch (error) {
-        console.log(error);
-    }
-}
+//     catch (error) {
+//         console.log(error);
+//     }
+// }

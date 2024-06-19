@@ -1,11 +1,11 @@
 import { useEffect, useState } from "react";
-import SideBar from "../../../components/SideBar/SideBar.tsx";
+import SideBar from "../../../layout/SideBar/SideBar.tsx";
 import NavBar from "../../../layout/NavBar/NavBar.tsx";
 import styles from "./Rewards.module.scss";
 import { RewardsDataType, RewardsProps } from "./Rewards.types.ts";
 import { createreward, deletereward, rewardsScreen, updatereward } from "../../../auth/manuReward.ts";
-import RewardsCard from "../../../components/RewardsCard/RewardsCard.tsx";
-import ModalDisAddReward from "../../../components/ModalDisAddReward/ModalDisAddReward.tsx";
+import RewardsCard from "../../../components/ManuFacturerComponent/RewardsCard/RewardsCard.tsx";
+import ModalDisAddReward from "../../../components/ManuFacturerComponent/ModalDisAddReward/ModalDisAddReward.tsx";
 
 const Rewards = ({}: RewardsProps) => {
     const [rewards, setRewards] = useState<RewardsDataType[]>([]);
@@ -59,7 +59,7 @@ const Rewards = ({}: RewardsProps) => {
   return (
     <div>
       <div>
-        <NavBar />
+      <SideBar />
         
       </div>
 

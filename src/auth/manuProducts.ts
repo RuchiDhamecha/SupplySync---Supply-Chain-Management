@@ -1,21 +1,42 @@
+import axios from "axios";
 import { productsDataTypes } from "../screens/manufacturerScreen/Products/Products.types";
 import axiosInstance from "./api";
 import authAxiosInstance from "./api.intercept";
 
-// import axios from "axios";
-
-// export const productsScreen = async()=>{
-//     const productsScreenResponse = await axios.get(
-//         `products/`
-//     ,{
-//         headers:{
-//             "ngrok-skip-browser-warning": "skip-browser-warning",
-//         }
-//     });
-//     console.log(productsScreenResponse.data)
+// export const productsScreen = async () => {
+//   try {
+//     const productsScreenResponse = await authAxiosInstance.get('products/');
+//     console.log(productsScreenResponse.data);
 //     return productsScreenResponse.data;
+//   } catch (error) {
+//     console.log(error);
+//   }
+// };
+
+export const productsScreen = async () => {
+
+  try {
+      const token = localStorage.getItem('token');
+      console.log(token);
     
-// }
+      const productsScreenResponse = await axios.get(
+          import.meta.env.VITE_API_URL+'products/'
+          , {
+              headers: {
+                  Authorization: `Bearer ${token}`,
+                  "ngrok-skip-browser-warning":"skip-browser-warning",
+
+              }
+          });
+          console.log(productsScreenResponse.data);
+          
+      return productsScreenResponse.data;
+  }
+
+  catch (error) {
+      console.log(error);
+  }
+}
 export const updateProduct = async (product: productsDataTypes) => {
   try {
     const { _id, ...updateData } = product;
@@ -31,7 +52,7 @@ export const updateProduct = async (product: productsDataTypes) => {
 export const deleteProduct = async (productId: string) => {
   try {
     const response = await authAxiosInstance.delete(`/products/${productId}`);
-    console.log("Delete product response:", response.data);
+    // console.log("Delete product response:", response.data);
     return response.data;
   } catch (error) {
     console.error("Failed to delete product:", error);
@@ -42,7 +63,7 @@ export const deleteProduct = async (productId: string) => {
 export const createProduct = async (product: productsDataTypes) => {
   try {
     const response = await authAxiosInstance.post('/products/addproduct', product);
-    console.log("Create product response:", response.data);
+    // console.log("Create product response:", response.data);
     return response.data;
   } catch (error) {
     console.error("Failed to add product:", error);

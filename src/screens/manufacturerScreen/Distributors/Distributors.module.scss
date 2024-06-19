@@ -1,1 +1,40 @@
- 
+@import '../../../styles//partials.module';
+
+.Distributors{
+    margin: 1rem 3rem;
+    h1{
+        color: $blueviolet;
+        padding-bottom:1rem ;
+    }
+    .Flex{
+        color: $blueviolet;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        // padding: 1rem ;
+        border-radius: 4px;
+        border: none;
+        button{
+            @extend %Button;
+            margin: 0;
+            padding: 0.5rem 1rem;
+            }
+            span{
+            text-decoration: underline;
+            text-underline-offset: 0.5rem;
+        }
+        .Edit{
+            color:green;
+            background-color: rgb(202, 250, 202);
+        }
+        .Delete{
+            color: red;
+            background-color: rgb(250, 209, 209);
+        }
+    }
+    .shadow{
+        box-shadow: 1px 1px 4px 1px #ccc;
+        padding: 1rem;
+    }
+}
+

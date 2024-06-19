@@ -1,10 +1,15 @@
+import SideBarDistributor from "../../../layout/SideBarDistributor/SideBarDistributor.tsx";
 import styles from "./Reports.module.scss"; 
 import { ReportsProps } from "./Reports.types.ts" 
  
-const Reports = ({}: ReportsProps) => { 
+const ReportsD = ({}: ReportsProps) => { 
     return(
-        <div>cust</div>
+        <div>
+            <div>
+                <SideBarDistributor/>
+            </div>
+        </div>
     ) 
 } 
  
-export default Reports 
+export default ReportsD 

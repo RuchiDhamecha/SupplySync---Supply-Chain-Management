@@ -1,4 +1,4 @@
- @import '../../partials';
+ @import '../../styles/modal.module.scss';
  
  .Login{
     box-shadow:1px 1px 8px 4px rgb(214, 171, 254);
@@ -21,8 +21,9 @@
         background-color: blueviolet;
         color: white;
         padding: 0.75rem 1.5rem;
-        border: $blueviolet;
+        border: blueviolet;
         border-radius: 4rem;
+        cursor: pointer;
     }
     button:active{
         position: relative;

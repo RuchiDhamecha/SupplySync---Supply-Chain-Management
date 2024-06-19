@@ -1,6 +1,6 @@
 import { useState } from "react";
 import styles from "./ProductsCard.module.scss";
-import { productsDataTypes } from "../../screens/manufacturerScreen/Products/Products.types";
+import { productsDataTypes } from "../../../screens/manufacturerScreen/Products/Products.types";
 import { ProductsCardProps } from "./ProductsCard.types";
 import { useForm } from "react-hook-form";
 

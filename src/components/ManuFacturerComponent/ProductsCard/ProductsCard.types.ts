@@ -1,4 +1,4 @@
-import { productsDataTypes } from '../../screens/manufacturerScreen/Products/Products.types';
+import { productsDataTypes } from '../../../screens/manufacturerScreen/Products/Products.types';
 
 
 

@@ -1,10 +1,15 @@
+import SideBarDistributor from "../../../layout/SideBarDistributor/SideBarDistributor.tsx";
 import styles from "./Sales.module.scss"; 
 import { SalesProps } from "./Sales.types.ts" 
  
-const Sales = ({}: SalesProps) => { 
+const SalesD = ({}: SalesProps) => { 
     return(
-        <div>cust</div>
+        <div>
+            <div>
+                <SideBarDistributor/>
+            </div>
+        </div>
     ) 
 } 
  
-export default Sales 
+export default SalesD 

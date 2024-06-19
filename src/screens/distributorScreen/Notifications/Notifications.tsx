@@ -1,10 +1,15 @@
+import SideBarDistributor from "../../../layout/SideBarDistributor/SideBarDistributor.tsx";
 import styles from "./Notifications.module.scss"; 
 import { NotificationsProps } from "./Notifications.types.ts" 
  
-const Notifications = ({}: NotificationsProps) => { 
+const NotificationsD = ({}: NotificationsProps) => { 
     return(
-        <div>cust</div>
+        <div>
+            <div>
+                <SideBarDistributor/>
+            </div>
+        </div>
     ) 
 } 
  
-export default Notifications 
+export default NotificationsD 

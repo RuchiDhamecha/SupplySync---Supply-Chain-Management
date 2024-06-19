@@ -1,4 +1,4 @@
-import { RewardsDataType } from "../../screens/manufacturerScreen/Rewards/Rewards.types";
+import { RewardsDataType } from "../../../screens/manufacturerScreen/Rewards/Rewards.types";
 
  export interface ModalDisAddRewardProps {
     isOpen: boolean;

@@ -1,10 +1,13 @@
-@import '../../../partials'; 
+@import '../../../styles//modal.module.scss'; 
  
  .ProductsScreen {
     padding: 0rem 3rem;
     display: flex;
     justify-content: flex-start;
     flex-wrap: wrap;
+   //  max-height: 95vh;
+   //  min-height: 95vh;
+   //  overflow-y: scroll;
  }
 
  .AddBtn {
@@ -12,7 +15,7 @@
     display: flex;
     justify-content: space-between;
     h2{
-      color: $blueviolet;
+      color: blueviolet;
     }
     
     button {
