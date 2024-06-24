@@ -20,6 +20,7 @@ import RewardsD from "./screens/distributorScreen/Rewards/Rewards";
 import NotificationsD from "./screens/distributorScreen/Notifications/Notifications";
 
 import NotFound from "./components/NotFound/NotFound";
+
 function App() {
   return (
     <>

@@ -19,7 +19,7 @@ const CustomersD = ({}: CustomersProps) => {
       console.log("error", error.message);
     }
   };
-  const handleUpdatePcustomer = async (updatedCustomer: CustomersDataTypesD) => {
+  const handleUpdateCustomer = async (updatedCustomer: CustomersDataTypesD) => {
     try {
       await updateCustomer(updatedCustomer);
       setCustomer(
@@ -32,10 +32,10 @@ const CustomersD = ({}: CustomersProps) => {
     }
   };
 
-  const handleDeletePcustomer = async (pcustomerId: string) => {
+  const handleDeleteCustomer = async (customerId: string) => {
     try {
-      await deleteCustomer(pcustomerId);
-      setCustomer(customers.filter((customer) => customer._id !== pcustomerId));
+      await deleteCustomer(customerId);
+      setCustomer(customers.filter((customer) => customer._id !== customerId));
     } catch (error: any) {
       console.log("Delete error", error.message);
     }
@@ -62,7 +62,7 @@ const CustomersD = ({}: CustomersProps) => {
       <div className={styles.Customers}>
         <p className={styles.Flexx}>
           <h2>Customers</h2>
-          <button onClick={() => setIsModalOpen(true)}>+ ADD Pcustomer</button>
+          <button onClick={() => setIsModalOpen(true)}>+ ADD Customer</button>
         </p>
 
         <div className={`${styles.Flex} `}>
@@ -76,8 +76,8 @@ const CustomersD = ({}: CustomersProps) => {
             <CustRowD
               key={distItem._id}
               customer={distItem}
-              onUpdate={handleUpdatePcustomer}
-              onDelete={handleDeletePcustomer}
+              onUpdate={handleUpdateCustomer}
+              onDelete={handleDeleteCustomer}
             />
           ))}
         </div>

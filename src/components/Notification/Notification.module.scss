@@ -1,0 +1,21 @@
+ @import '../../styles/partials.module';
+.Notification {
+    background-color: #f8d7da;
+    color: $blueviolet;
+    padding: 10px;
+    border: 1px solid #f5c6cb;
+    border-radius: 5px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+  }
+  
+  .CloseBtn {
+   @extend %Button;
+  }
+  
+  .CloseBtn:hover {
+    text-decoration: underline;
+  }
+  

@@ -3,24 +3,19 @@
     ul {
         display: flex;
         flex-direction: row;
-        justify-content: space-around;
-        background-color: rgb(193, 230, 236);
+        justify-content: center;
+        // background-color: rgb(193, 230, 236);
         padding: 1rem;
-
-
+        gap: 2.5rem;
+        
+        
         li {
-
+            
             list-style-type: none;
             text-decoration: none;
-        }
+            color: blueviolet;
+            text-underline-offset: 0.75rem;
 
-        li:active {
-            color: black;
         }
-
-        li:hover {
-            border: none;
-        }
-
     }
 }

@@ -8,4 +8,7 @@
     .EditSaveBtn{
         @extend %GreenButton;
     }
+    .EditCancelBtn{
+        @extend %RedButton;
+    }
 }

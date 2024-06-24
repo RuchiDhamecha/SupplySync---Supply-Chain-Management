@@ -23,12 +23,12 @@ const CustRowD = ({ customer, onUpdate, onDelete }: CustRowDProps) => {
   return (
     <div className={styles.customersCard}>
       {isEditing ? (
-        <form onSubmit={handleSubmit(onSubmit)}>
+        <form onSubmit={handleSubmit(onSubmit)} className={styles.Customer}>
           <input {...register("customer_name")} />
-          <input {...register("email")} />
           <input {...register("mobile_number")} />
+          <input {...register("email")} />
           <input {...register("address")} />
-          <div className={styles.Flex}>
+         
             <button
               className={styles.EditCancelBtn}
               onClick={() => setIsEditing(true)}
@@ -38,7 +38,7 @@ const CustRowD = ({ customer, onUpdate, onDelete }: CustRowDProps) => {
             <button type="submit" className={styles.EditSaveBtn}>
               Save
             </button>
-          </div>
+          
         </form>
       ) : (
         <div className={styles.Customer}>

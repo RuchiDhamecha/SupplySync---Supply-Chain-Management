@@ -10,7 +10,7 @@ export interface LoginResponse {
 export const login = async (data: LoginFormInputs) => {
   try {
     const response = await axiosInstance.post('auth/login', data)
-    // console.log(`res : ${JSON.parse(JSON.stringify(response.data))}`)
+    console.log(`res : ${JSON.parse(JSON.stringify(response.data))}`)
     return response.data.data;
   } catch (e) {
     console.log(e)
