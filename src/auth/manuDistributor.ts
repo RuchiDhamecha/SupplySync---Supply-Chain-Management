@@ -5,21 +5,7 @@ import { DistributorsDataTypes } from "../screens/manufacturerScreen/Distributor
 export const distributorsScreen = async () => {
 
     try {
-        const token = localStorage.getItem('token');
-        console.log(token);
-      
-        const distributorsScreenResponse = await axios.get(
-            import.meta.env.VITE_API_URL+'user/distributors'
-            , {
-                headers: {
-                    Authorization: `Bearer ${token}`,
-                    "ngrok-skip-browser-warning":"skip-browser-warning",
-  
-                }
-            });
-            
-        console.log(distributorsScreenResponse.data);
-
+        const distributorsScreenResponse = await authAxiosInstance.get('user/distributors');
         return distributorsScreenResponse.data.data.map((data:any)=>{
             return { ...data.details[0], _id: data._id};
         });

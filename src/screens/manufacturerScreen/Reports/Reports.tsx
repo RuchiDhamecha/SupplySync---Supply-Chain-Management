@@ -10,6 +10,11 @@ const Reports = ({}: ReportsProps) => {
       <SideBar />
       
       </div>
+      <div className={styles.Reports}>
+        <h2>
+          Report
+        </h2>
+      </div>
     </div>
   );
 };

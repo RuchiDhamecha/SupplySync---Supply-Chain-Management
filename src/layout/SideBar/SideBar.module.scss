@@ -2,8 +2,9 @@
     ul {
         display: flex;
         flex-direction: row;
-        justify-content: space-around;
-        background-color: rgb(225, 200, 248);
+        justify-content: center;
+        gap: 2rem;
+        // background-color: rgb(225, 200, 248);
         padding: 1rem;
 
 

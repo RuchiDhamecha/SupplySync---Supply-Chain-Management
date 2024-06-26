@@ -1,0 +1,11 @@
+ @import '../../../styles/partials.module';
+ 
+ .OrderRow{
+
+    .GreenBtn{
+        @extend %GreenButton;
+    }
+    .RedBtn{
+        @extend %RedButton;
+    }
+ }

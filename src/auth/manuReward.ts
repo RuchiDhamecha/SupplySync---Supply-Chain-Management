@@ -5,15 +5,6 @@ import { RewardsDataType } from "../screens/manufacturerScreen/Rewards/Rewards.t
 import authAxiosInstance from "./api.intercept";
 
 export const rewardsScreen = async () => {
-  // const rewardsScreenResponse = await axios.get(
-  //     `${import.meta.env.VITE_API_URL}merchandise/`
-  // ,{
-  //     headers:{
-  //         "ngrok-skip-browser-warning": "skip-browser-warning",
-  //     }
-  // });
-  // console.log(rewardsScreenResponse.data)
-  // return rewardsScreenResponse.data;
   try {
     const rewardsScreenResponse = await authAxiosInstance.get('merchandise/');
     console.log(rewardsScreenResponse.data);
