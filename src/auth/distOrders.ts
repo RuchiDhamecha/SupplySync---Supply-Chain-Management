@@ -2,7 +2,7 @@ import axios from "axios";
 import { ordersDataTypes } from "../screens/distributorScreen/Orders/Orders.types";
 import authAxiosInstance from "./api.intercept";
 
-// Function to get orders screen data
+
 export const ordersScreen = async () => {
   try {
     const token = localStorage.getItem('token');
@@ -25,20 +25,19 @@ export const ordersScreen = async () => {
   }
 };
 
-// Function to add to cart
+
 export const addToCart = async (order: { product_name: string, product_price: number, quantity: number }) => {
   try {
     const payload = {
       products: [order]
     };
-    console.log("Add to Cart payload:", payload);  // Log the payload
+    console.log("Add to Cart payload:", payload);  
     await authAxiosInstance.post("/user/cart", payload);
   } catch (error: any) {
     throw new Error(error.response.data.message || "Failed to add to cart");
   }
 };
 
-// Function to fetch cart orders
 export const fetchCartOrders = async () => {
   try {
     const response = await authAxiosInstance.get('/cart');

@@ -5,18 +5,7 @@ import { CustomersDataTypesD } from "../screens/distributorScreen/Customers/Cust
 export const customersScreen = async () => {
 
     try {
-        const token = localStorage.getItem('token');
-        console.log(token);
-      
-        const customersScreenResponse = await axios.get(
-            import.meta.env.VITE_API_URL+'customer/'
-            , {
-                headers: {
-                    Authorization: `Bearer ${token}`,
-                    "ngrok-skip-browser-warning":"skip-browser-warning",
-  
-                }
-            });
+        const customersScreenResponse = await authAxiosInstance.get('customer/');
             console.log(customersScreenResponse.data);
             
         return customersScreenResponse.data.data;

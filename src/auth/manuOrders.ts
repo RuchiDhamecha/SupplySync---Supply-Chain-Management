@@ -1,12 +1,11 @@
-import axios from 'axios';
 import authAxiosInstance from './api';
 
 export const fetchOrders = async () => {
   try {
-    const pendingResponse = await axios.get('user/orders/pending');
-    const approvedResponse = await axios.get('user/orders/accepted');
-    const rejectedResponse = await axios.get('user/orders/rejected');
-    console.log(JSON.stringify(pendingResponse.data) + "dfghjk" )
+    const pendingResponse = await authAxiosInstance.get('user/orders/pending');
+    const approvedResponse = await authAxiosInstance.get('user/orders/accepted');
+    const rejectedResponse = await authAxiosInstance.get('user/orders/rejected');
+    console.log(JSON.stringify(pendingResponse.data.data) + "dfghjk" )
     return {
       pendingOrders: pendingResponse.data.data,
       approvedOrders: approvedResponse.data.data,

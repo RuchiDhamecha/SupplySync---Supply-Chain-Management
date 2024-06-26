@@ -1,0 +1,46 @@
+ @import '../../../styles/partials.module';
+ 
+ .RewardsCard {
+     display: flex;
+     box-shadow: 1px 1px 4px 1px rgb(217, 181, 250);
+     flex-direction: column;
+     margin: 1rem;
+     padding: 1rem;
+     width: 16rem;
+
+     img {
+         height: 12rem;
+         width: 16rem
+     }
+
+     .Flex {
+         display: flex;
+         align-items: center;
+         justify-content: space-between;
+     }
+     button{
+       
+        margin-top: 0.5rem ;
+        padding: 0.5rem 1rem;
+        box-sizing:content-box;
+        background-color: rgb(237, 224, 248);
+        color: blueviolet;
+        border: none;
+        border-radius: 4px;
+        &:hover {
+            position: relative;
+            bottom: 2px;
+            right: 2px;
+            color: rgb(237, 224, 248);
+            background-color: blueviolet;
+           
+        }
+     }
+
+     button:active {
+         position: relative;
+         top: 3px;
+     }
+
+    
+ }
