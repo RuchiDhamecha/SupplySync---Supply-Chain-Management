@@ -21,12 +21,12 @@ const Orders = () => {
     try {
       const {
         pendingOrders,
-        approvedOrders,
+        acceptedOrders,
         rejectedOrders,
       } = await fetchOrders();
       setPendingOrders(pendingOrders || []);
       console.log(pendingOrders)
-      setAcceptedOrders(approvedOrders || []);
+      setAcceptedOrders(acceptedOrders || []);
 
       setRejectedOrders(rejectedOrders || []);
     } catch (err) {
@@ -113,7 +113,7 @@ const Orders = () => {
                 {activeTab === "pending" && <th>Actions</th>}
               </tr>
             </thead>
-            <tbody>
+        
               {getOrdersByTab().map((order) => (
                 <OrderRow
                   key={order._id}
@@ -123,7 +123,7 @@ const Orders = () => {
                   showActions={activeTab === "pending"}
                 />
               ))}
-            </tbody>
+       
           </table>
         </section>
 

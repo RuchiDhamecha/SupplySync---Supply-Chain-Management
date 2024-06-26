@@ -44,8 +44,10 @@ const Distributors = ({}: DistributorsProps) => {
     }
   };
 
-  const handleAddDistributor = async (newPdistributor: DistributorsDataTypes) => {
+  const handleAddDistributor = async (newPdistributor:any) => {
     try {
+      console.log(newPdistributor);
+      
       const response = await createDistributor(newPdistributor);
       setDistributor([...distributers, response.data]);
     } catch (error: any) {

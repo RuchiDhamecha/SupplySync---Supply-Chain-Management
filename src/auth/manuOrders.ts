@@ -1,14 +1,13 @@
-import authAxiosInstance from './api';
+import authAxiosInstance from './api.intercept';
 
 export const fetchOrders = async () => {
   try {
     const pendingResponse = await authAxiosInstance.get('user/orders/pending');
-    const approvedResponse = await authAxiosInstance.get('user/orders/accepted');
+    const acceptedResponse = await authAxiosInstance.get('user/orders/accepted');
     const rejectedResponse = await authAxiosInstance.get('user/orders/rejected');
-    console.log(JSON.stringify(pendingResponse.data.data) + "dfghjk" )
     return {
       pendingOrders: pendingResponse.data.data,
-      approvedOrders: approvedResponse.data.data,
+      acceptedOrders: acceptedResponse.data.data,
       rejectedOrders: rejectedResponse.data.data,
     };
   } catch (err) {
@@ -18,7 +17,11 @@ export const fetchOrders = async () => {
 
 export const acceptOrder = async (orderId: string) => {
   try {
-    await authAxiosInstance.post(`/user/orders/accept/${orderId}`);
+    const response=await authAxiosInstance.put(`/user/orders/DistributorAccept/${orderId}`,{
+        order_status:"accepted"
+    });
+    console.log(response);
+    return response;
   } catch (err) {
     throw new Error('cant accept order');
   }
@@ -26,7 +29,9 @@ export const acceptOrder = async (orderId: string) => {
 
 export const rejectOrder = async (orderId: string) => {
   try {
-    await authAxiosInstance.post(`/user/orders/reject/${orderId}`);
+    await authAxiosInstance.put(`/user/orders/DistributorReject/${orderId}`, {
+        order_status:"rejected"
+    });
   } catch (err) {
     throw new Error('cant rejecting order');
   }

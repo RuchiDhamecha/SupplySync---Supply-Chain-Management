@@ -41,9 +41,11 @@ export const deleteDistributor = async (distributorId: string) => {
   }
 };
 
-export const createDistributor = async (distributor: DistributorsDataTypes) => {
+export const createDistributor = async (distributor: any) => {
   try {
+    console.log(distributor)
     const response = await authAxiosInstance.post('/user/register', distributor);
+    console.log(response);
     return response.data;
   } catch (error) {
     console.error("Failed to add distributor:", error);

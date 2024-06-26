@@ -7,14 +7,16 @@ const OrderRow = ({
   onReject,
   showActions,
 }: OrderRowProps) => {
+    console.log(order);
   return (
-    <div className={styles.OrderRow}>
+    <tbody className={styles.OrderRow}>
       <tr key={order._id}>
         <td>{order.order_date}</td>
         <td>{order.order_total_price}</td>
-        <td>{order.products[0].quantity}</td>
-        <td>{order.products[0].product_price}</td>
-        <td>{order.products[0].product_name}</td>
+        
+        {/* <td>{order.products[0].quantity}||24</td> */}
+        {/* <td>{order.products[0].product_price}</td>
+        <td>{order.products[0].product_name}</td> */}
         {showActions && (
           <td>
             <button
@@ -32,7 +34,7 @@ const OrderRow = ({
           </td>
         )}
       </tr>
-    </div>
+    </tbody>
   );
 };
 

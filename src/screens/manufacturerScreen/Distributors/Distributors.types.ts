@@ -6,6 +6,7 @@ export interface DistributorsDataTypes {
     mobile_number: number
     address: string
     points: number
+    password: string
     // purchase_history:{};
     update?: () => void
     delete?: () => void

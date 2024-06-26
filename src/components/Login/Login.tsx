@@ -16,8 +16,9 @@ const Login = ({}: LoginProps) => {
     try {
       console.log(data);
       const { user, token } = await login(data);
-
+   
       const role = user.roleId[0];
+      localStorage.setItem('roleId',role)
       console.log(`data : ${user}`);
       if (role === 1) {
         navigate('/manufacturer');
