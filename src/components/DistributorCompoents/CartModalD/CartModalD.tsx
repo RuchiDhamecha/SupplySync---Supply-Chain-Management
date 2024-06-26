@@ -30,9 +30,13 @@ const CartModalD = ({ isOpen, onClose, orders }: CartModalDProps) => {
               <h3>{order.product_name}</h3>
               <p>Price: {order.product_price}</p>
               <div className={styles.QuantityControls}>
-                <button onClick={() => handleQuantityChange(order._id, -1)}>-</button>
+                <button onClick={() => handleQuantityChange(order._id, -1)}>
+                  -
+                </button>
                 <span>{order.quantity}</span>
-                <button onClick={() => handleQuantityChange(order._id, 1)}>+</button>
+                <button onClick={() => handleQuantityChange(order._id, 1)}>
+                  +
+                </button>
               </div>
             </div>
           ))}

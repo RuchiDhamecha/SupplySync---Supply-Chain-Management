@@ -19,7 +19,7 @@ export const updatereward = async (reward: RewardsDataType) => {
     const { _id, ...updateData } = reward;
     return await authAxiosInstance.put(`/merchandise/${_id}`, updateData);
   } catch (error) {
-    console.error("Failed to update reward:", error);
+    console.log(error);
     throw error;
   }
 };
@@ -36,7 +36,7 @@ export const createreward = async (reward: RewardsDataType) => {
   try {
     return await authAxiosInstance.post('/merchandise/addmerch', reward);
   } catch (error) {
-    console.error("Failed to add reward:", error);
+    console.log( error);
     throw error;
   }
 };
