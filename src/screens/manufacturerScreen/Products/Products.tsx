@@ -17,7 +17,6 @@ const Products = ({}: ProductsProps) => {
     try {
       const productsScreenResponse = await productsScreen();
       setProducts(productsScreenResponse.data);
-      console.log(productsScreenResponse.data)
     } catch (error: any) {
       console.log("error", error.message);
     }

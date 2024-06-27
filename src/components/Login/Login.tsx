@@ -1,15 +1,25 @@
 import React from 'react';
 import styles from "./Login.module.scss";
 import { LoginProps } from "./Login.types.ts";
-import { Link, useNavigate } from 'react-router-dom';
-import { LoginFormInputs } from './Login.types.ts';
+import { useNavigate } from 'react-router-dom';
 import { login } from "../../auth/login.instance.ts";
 import { useForm } from "react-hook-form";
+import { z } from "zod";
+import { zodResolver } from "@hookform/resolvers/zod";
 import { toast, ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
+const loginSchema = z.object({
+  email: z.string().min(1, "Email is required").email("Invalid email address").trim(),
+  password: z.string().min(1, "Password is required")
+})
+
+type LoginFormInputs = z.infer<typeof loginSchema>;
+
 const Login = ({}: LoginProps) => {
-  const { register, handleSubmit, formState: { errors } } = useForm<LoginFormInputs>();
+  const { register, handleSubmit, formState: { errors } } = useForm<LoginFormInputs>({
+    resolver: zodResolver(loginSchema)
+  });
   const navigate = useNavigate();
 
   const onSubmit = async (data: LoginFormInputs) => {
@@ -18,7 +28,7 @@ const Login = ({}: LoginProps) => {
       const { user, token } = await login(data);
    
       const role = user.roleId[0];
-      localStorage.setItem('roleId',role)
+      localStorage.setItem('roleId', role);
       console.log(`data : ${user}`);
       if (role === 1) {
         navigate('/manufacturer');
@@ -41,15 +51,15 @@ const Login = ({}: LoginProps) => {
         <div>
           <label>Email :</label>
           <div>
-            <input {...register('email', { required: true })} />
-            {errors.email && <span className={styles.error}>This field is required</span>}
+            <input {...register('email')} />
+            {errors.email && <span className={styles.error}>{errors.email.message}</span>}
           </div>
         </div>
         <div>
           <label>Password :</label>
           <div>
-            <input type="password" {...register('password', { required: true })} />
-            {errors.password && <span className={styles.error}>This field is required</span>}
+            <input type="password" {...register('password')} />
+            {errors.password && <span className={styles.error}>{errors.password.message}</span>}
           </div>
         </div>
         <button type="submit">Login</button>

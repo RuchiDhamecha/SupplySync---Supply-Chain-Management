@@ -6,12 +6,11 @@
         gap: 2rem;
         // background-color: rgb(225, 200, 248);
         padding: 1rem;
-
-
         li {
-
+            cursor: pointer;
             list-style-type: none;
             text-decoration: none;
+            text-underline-offset: 6px;
         }
 
         li:active {

@@ -17,7 +17,7 @@ const OrdersD = ({}: OrdersProps) => {
     try {
       const ordersScreenResponse = await ordersScreen();
       setOrders(ordersScreenResponse);
-      console.log(ordersScreenResponse);
+      // console.log(ordersScreenResponse);
     } catch (error: any) {
       console.log("error", error.message);
     }
@@ -30,7 +30,6 @@ const OrdersD = ({}: OrdersProps) => {
       setCartOrders([...cartOrders, { ...order, quantity }]);
       setNotificationMsg("Added to cart successfully!");
     } catch (error: any) {
-      // console.log("Add to Cart error", error.message);
       setNotificationMsg("Failed to add to cart.");
     } finally {
       setTimeout(() => {

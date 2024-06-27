@@ -1,13 +1,32 @@
- .NavBar {
+ .Flex {
      display: flex;
+     justify-content: space-between;
      align-items: center;
      gap: 2rem;
      background-color: blueviolet;
-     color: white;
      padding: 0.75rem 4.5rem;
 
-     img {
-         height: 2.5rem;
+     .NavBar {
+         display: flex;
+         align-items: center;
+
+         .NavHeading {
+             color: white;
+
+         }
+
+         img {
+             height: 2.5rem;
+
+         }
+
+     }
+
+     button {
+         padding: 1rem 2rem;
+         border: none;
+         border-radius: 4px;
+         cursor: pointer;
 
      }
  }
