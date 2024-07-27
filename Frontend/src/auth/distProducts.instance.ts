@@ -2,15 +2,16 @@ import axios from "axios";
 
 import authAxiosInstance from "./api.intercept";
 
-// export const productsScreen = async () => {
-//   try {
-//     const productsScreenResponse = await authAxiosInstance.get('products/');
-//     console.log(productsScreenResponse.data);
-//     return productsScreenResponse.data;
-//   } catch (error) {
-//     console.log(error);
-//   }
-// };
+export const productsScreen = async () => {
+    console.log("gv")
+  try {
+    const productsScreenResponse = await authAxiosInstance.get('products/');
+    console.log(productsScreenResponse.data);
+    return productsScreenResponse.data;
+  } catch (error) {
+    console.log(error);
+  }
+};
 
 // export const productsScreen = async () => {
 

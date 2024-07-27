@@ -19,7 +19,7 @@ export const ordersScreen = async () => {
     );
     console.log(ordersScreenResponse.data);
     
-    return ordersScreenResponse.data.data;
+    return ordersScreenResponse.data.data.products;
   } catch (error) {
     console.log(error);
   }

@@ -6,8 +6,8 @@ import authAxiosInstance from "./api.intercept";
 export const productsScreen = async () => {
   try {
     const productsScreenResponse = await authAxiosInstance.get('products/');
-    console.log(productsScreenResponse.data);
-    return productsScreenResponse.data;
+   const products = productsScreenResponse.data.data.products
+    return products;
   } catch (error) {
     console.log(error);
   }

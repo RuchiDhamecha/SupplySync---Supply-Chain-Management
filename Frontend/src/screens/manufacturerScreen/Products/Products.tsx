@@ -16,7 +16,7 @@ const Products = ({}: ProductsProps) => {
   const getdata = async () => {
     try {
       const productsScreenResponse = await productsScreen();
-      setProducts(productsScreenResponse.data);
+      setProducts(productsScreenResponse);
     } catch (error: any) {
       console.log("error", error.message);
     }

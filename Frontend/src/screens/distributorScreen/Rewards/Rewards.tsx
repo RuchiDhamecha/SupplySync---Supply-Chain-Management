@@ -11,7 +11,7 @@ const RewardsD = ({}: RewardsProps) => {
   const getdata = async () => {
     try {
       const rewardsScreenResponse = await rewardsDScreen();
-      setRewards(rewardsScreenResponse.data);
+      setRewards(rewardsScreenResponse);
     } catch (error: any) {
       console.log("error", error.message);
     }

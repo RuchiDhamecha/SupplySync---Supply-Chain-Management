@@ -8,7 +8,7 @@ export const customersScreen = async () => {
         const customersScreenResponse = await authAxiosInstance.get('customer/');
             console.log(customersScreenResponse.data);
             
-        return customersScreenResponse.data.data;
+        return customersScreenResponse.data.data.customers;
     }
   
     catch (error) {
